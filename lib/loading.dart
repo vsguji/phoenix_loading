@@ -28,11 +28,11 @@ import 'package:phoenix_dialog/phoenix_dialog.dart';
 ///  * [RefreshIndicator], 刷新组件。
 ///  * [BrnLoadingDialog], 加载对话框。
 
-class BrnPageLoading extends StatelessWidget {
+class PageLoading extends StatelessWidget {
   final String? content;
   final BoxConstraints constraints;
 
-  const BrnPageLoading({
+  const PageLoading({
     Key? key,
     this.content,
     this.constraints = const BoxConstraints(
@@ -114,18 +114,18 @@ class BrnPageLoading extends StatelessWidget {
 
 /// 通过 [BrnPageLoading] 构建出的加载状态的弹窗，加载动画和加载文字并排展示，且在屏幕中间。可通
 /// 过 [BrnLoadingDialog.show] 和 [BrnLoadingDialog.dismiss] 控制弹窗的显示和关闭。不会自动关闭。
-class BrnLoadingDialog extends Dialog {
+class LoadingDialog extends Dialog {
   /// tag 用于在 BrnSafeDialog 中标记类型
   static const String _loadingDialogTag = '_loadingDialogTag';
 
   /// 加载时的提示文案，默认为 `加载中...`
   final String? content;
 
-  const BrnLoadingDialog({Key? key, this.content}) : super(key: key);
+  const LoadingDialog({Key? key, this.content}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BrnPageLoading(
+    return PageLoading(
         content: content ?? BrnIntl.of(context).localizedResource.loading);
   }
 
@@ -148,7 +148,7 @@ class BrnLoadingDialog extends Dialog {
         barrierDismissible: barrierDismissible,
         useRootNavigator: useRootNavigator,
         builder: (_) {
-          return BrnLoadingDialog(
+          return LoadingDialog(
               content:
                   content ?? BrnIntl.of(context).localizedResource.loading);
         });
