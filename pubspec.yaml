@@ -1,6 +1,6 @@
 name: phoenix_loading
 description: phoenix 将做为企业级基础组件:Loading,提供项目支持。
-version: 1.0.3
+version: 1.0.4
 homepage: 'https://github.com/vsguji/phoenix_loading.git'
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   phoenix_base: ^1.0.6
-  phoenix_dialog: ^1.0.0
+  phoenix_dialog: ^1.0.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
